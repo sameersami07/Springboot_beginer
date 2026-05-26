@@ -1,0 +1,112 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 12px 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.topnav .brand {
+  font-weight: 700;
+  color: #2b2f77;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 600;
+}
+
+.main-content {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.hero {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  background: #fff;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(43,47,119,0.06);
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-right {
+  width: 260px;
+  text-align: center;
+}
+
+.profile-img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+h1 {
+  color: #2b2f77;
+  margin-bottom: 8px;
+}
+
+.lead {
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.btn {
+  background: #2b2f77;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.btn:hover { opacity: 0.95; }
+
+.card {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); }
+
+.card .container { padding: 16px; }
+
+.usercard-section { margin-top: 18px; }
+
+@media (max-width: 720px) {
+  .hero { flex-direction: column; }
+  .hero-right { width: 100%; }
+}
