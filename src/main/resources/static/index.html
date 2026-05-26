@@ -7,46 +7,24 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>
-        Hello from html file
-  <title>John - Architect & Engineer</title>
-  <link rel="stylesheet" href="css/style.css">
-  <img src="img_avatar3.png" alt="Avatar" style="width:100%">
-  <div class="container">
-  <nav class="topnav">
-    <div class="brand">John's Studio</div>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <header>
+    <h1>Portfolio</h1>
+  </header>
 
-  <main class="main-content">
-    <section id="home" class="hero">
-      <div class="hero-left">
-        <h1>Hello from HTML file</h1>
-        <p class="lead">Architect and Engineer — Designing spaces that inspire.</p>
-        <button class="btn" id="toggleBtn">Toggle Details</button>
-      </div>
-      <div class="hero-right">
-        <img src="img/img_avatar3.png" alt="Profile Image" class="profile-img">
+  <main>
+    <section class="card user-card">
+      <img id="userImage" src="img/img_avatar3.png" alt="User Image" class="profile-img">
+      <div class="container">
+        <h4 id="userName"><b>John</b></h4>
+        <p id="userGender">Male</p>
       </div>
     </section>
 
-    <section id="usercard" class="usercard-section">
-      <!-- UserCard will be inserted/updated by JS -->
-      <div id="userCard" class="card container" aria-live="polite">
-        <div class="container">
-          <h4><b>John Doe</b></h4>
-          <p>Architect & Engineer</p>
-        </div>
-      </div>
-    </section>
+    <div style="margin-top:16px;">
+      <button class="btn" onclick="toggleCard()">Toggle User</button>
+    </div>
   </main>
 
   <script src="js/script.js"></script>
-    <script src="js/script.js"></script>
 </body>
 </html>

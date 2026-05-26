@@ -1,46 +1,23 @@
-// Page script for UserCard and Toggle
-document.addEventListener('DOMContentLoaded', function () {
-	const defaultUser = {
-		name: 'John Doe',
-		title: 'Architect & Engineer',
-		location: 'New York, USA',
-		email: 'john.doe@example.com',
-		detailsVisible: false
-	};
+console.log("Hello from JS");
 
-	// Try to load saved state from localStorage
-	const saved = localStorage.getItem('userState');
-	const userState = saved ? JSON.parse(saved) : defaultUser;
 
-	const userCard = document.getElementById('userCard');
-	const toggleBtn = document.getElementById('toggleBtn');
+// JSON Array = JavaScript Object Notation
+var users = [
+    {"name" : "John", "gender" : "Male", "img" : "img/img_avatar3.png"},
+    {"name" : "Jane", "gender" : "Female", "img" : "img/img_avatar2.png"}
+];
 
-	function renderUserCard(state) {
-		userCard.innerHTML = `
-			<div class="container">
-				<h4><b>${state.name}</b></h4>
-				<p>${state.title}</p>
-				${state.detailsVisible ? `
-					<p><strong>Location:</strong> ${state.location}</p>
-					<p><strong>Email:</strong> <a href="mailto:${state.email}">${state.email}</a></p>
-				` : ''}
-			</div>
-		`;
-	}
+var currentUserIndex = 0;
 
-	// Initial render
-	renderUserCard(userState);
+function toggleCard(){
+    currentUserIndex = (currentUserIndex + 1) % users.length;
+    var user = users[currentUserIndex];
 
-	// Toggle handler updates JSON state, DOM, and saves to localStorage
-	toggleBtn.addEventListener('click', function () {
-		userState.detailsVisible = !userState.detailsVisible;
-		renderUserCard(userState);
-		localStorage.setItem('userState', JSON.stringify(userState));
-	});
-
-	// Expose for debugging
-	window.__userState = userState;
-});
-
-console.log('script.js loaded');
-
+    // DOM Manipulation
+    var imgEl = document.getElementById("userImage");
+    var genderEl = document.getElementById("userGender");
+    var nameEl = document.getElementById("userName");
+    if(imgEl) imgEl.src = user.img;
+    if(genderEl) genderEl.textContent = user.gender;
+    if(nameEl) nameEl.textContent = user.name;
+}
