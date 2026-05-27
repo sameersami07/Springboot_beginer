@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random User | Impressive Navbar</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="card.html">Card</a>
+      <a href="randomuser.html" class="active">Random User</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <section class="home-intro">
+    <h1>Random User</h1>
+    <p>Click the button below to fetch a random user from the RandomUser API. Each click displays a new random profile.</p>
+  </section>
+
+  <main class="main-content">
+    <section class="card user-card">
+      <img id="userImage" src="img/john.png" alt="User Image" class="profile-img">
+      <div class="container">
+        <h4 id="userName"><b>John Doe</b></h4>
+        <p id="userGender">Male</p>
+      </div>
+    </section>
+
+    <div class="button-row">
+      <button class="btn" onclick="getAndDisplayRandomUser()">Get Random User</button>
+    </div>
+  </main>
+
+  <script src="js/randomuser.js"></script>
+</body>
+</html>

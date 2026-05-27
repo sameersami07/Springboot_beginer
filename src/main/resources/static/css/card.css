@@ -1,0 +1,13 @@
+.card {
+    border: 1px solid #000;
+    width: 25%;
+    margin: 20px;
+}
+
+.card img {
+    width: 100%;
+}
+
+.card-container {
+    padding: 40px;
+}
