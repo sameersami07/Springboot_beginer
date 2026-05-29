@@ -1,16 +1,18 @@
-function display(user){
-    document.getElementById("userImage").src = user.picture.large;
-    document.getElementById("userName").textContent = user.name.first + ' ' + user.name.last;
-    document.getElementById("userGender").textContent = user.gender;
+function display(user) {
+    document.getElementById("userImage").src = user.pictureUrl;
+    document.getElementById("userName").textContent = user.firstName + ' ' + user.lastName;
+    document.getElementById("userGender").textContent = user.gender || 'Unknown';
 }
 
-function getAndDisplayRandomUser(){
-    fetch('https://randomuser.me/api/')
-        .then(function(res){
+function getAndDisplayRandomUser() {
+    fetch('/api/users/random')
+        .then(function(res) {
             return res.json();
         })
-        .then(function(data){
-            var  userData = data.results[0];
-            display(userData);
+        .then(function(user) {
+            display(user);
+        })
+        .catch(function(error) {
+            console.error('Unable to fetch random user:', error);
         });
-    }
+}
